@@ -1,0 +1,251 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gallery – RIEU TOURS AND SAFARI| ZANZIBAR AND TANZANIA</title>
+
+<link rel="stylesheet" href="style.css"></head><body>
+<header><div class="wrap"><a class="logo" href="index.html">RIEU TOURS<span>ZANZIBAR AND SAFARI</span></a><button class="menu-btn" aria-expanded="false" aria-controls="nav">Menu</button><nav id="nav" aria-label="Main"><ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About</a><ul><li><a href="policies.html">Policies, Terms and Conditions</a></li><li><a href="faqs.html">FAQs</a></li></ul></li>
+<li><a href="#">Experiences</a><ul>
+<li><a href="zanzibar-excursions.html">Zanzibar Tour</a><ul><li><a href="zanzibar-excursions.html">Zanzibar Excursions</a></li><li><a href="zanzibar-holidays.html">Zanzibar Holiday</a></li><li><a href="zanzibar-wedding.html">Zanzibar Wedding Planner</a></li></ul></li>
+<li><a href="tanzania-safari.html">Tanzania Safaris</a><ul><li><a href="tanzania-safari.html">Tanzania Safari</a></li><li><a href="safaris-from-zanzibar.html">Safaris from Zanzibar</a></li></ul></li></ul></li>
+<li><a href="transfers.html">Service</a><ul><li><a href="transfers.html">Transfers</a></li></ul></li>
+<li><a href="gallery.html">Gallery</a></li>
+<li><a href="contact.html">Contact</a></li></ul></nav><div class="call">Call / WhatsApp <b>+255 679 542 803</b></div><a class="btn" href="https://wa.me/255679542803">Get a Free Quote</a></div></header>
+
+</head>
+
+<body>
+
+    <!-- GALLERY -->
+    <section class="gallery-section">
+
+        <div class="gallery-header">
+            <h1>Our Gallery</h1>
+            <p>Explore the beauty of Zanzibar, Mnemba Island and Tanzania Safari.</p>
+        </div>
+
+        <div class="gallery">
+
+            <!-- PHOTO 1 -->
+            <div class="gallery-card" onclick="openLightbox(0)">
+                <img src="images/photo 1.jpg" alt="Zanzibar Beach">
+                <div class="photo-title">Zanzibar Beach</div>
+            </div>
+
+            <!-- PHOTO 2 -->
+            <div class="gallery-card" onclick="openLightbox(1)">
+                <img src="images/photo 2.jpg" alt="Mnemba Island">
+                <div class="photo-title">Wild animals</div>
+            </div>
+
+            <!-- PHOTO 3 -->
+            <div class="gallery-card" onclick="openLightbox(2)">
+                <img src="images/photo 3.jpg" alt="Dolphin Tour">
+                <div class="photo-title">Spice Tour</div>
+            </div>
+
+            <!-- PHOTO 4 -->
+            <div class="gallery-card" onclick="openLightbox(3)">
+                <img src="images/photo 4.jpg" alt="Safari">
+                <div class="photo-title">Safari Adventure</div>
+            </div>
+
+            <!-- PHOTO 5 -->
+            <div class="gallery-card" onclick="openLightbox(4)">
+                <img src="images/photo 5.jpg" alt="Beach">
+                <div class="photo-title">Beautiful Beach</div>
+            </div>
+
+            <!-- PHOTO 6 -->
+            <div class="gallery-card" onclick="openLightbox(5)">
+                <img src="images/photo 6.jpg" alt="Snorkeling">
+                <div class="photo-title">Snorkeling</div>
+            </div>
+
+            <!-- PHOTO 7 -->
+            <div class="gallery-card" onclick="openLightbox(6)">
+                <img src="images/photo 7.jpg" alt="Tropical Island">
+                <div class="photo-title">Tropical Island</div>
+            </div>
+
+            <!-- PHOTO 8 -->
+            <div class="gallery-card" onclick="openLightbox(7)">
+                <img src="images/photo 8.jpg" alt="Zanzibar Experience">
+                <div class="photo-title">Dolphin tour</div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- LIGHTBOX -->
+    <div id="lightbox" class="lightbox">
+
+        <!-- CLOSE BUTTON -->
+        <span class="close-btn" onclick="closeLightbox()">&times;</span>
+
+        <!-- PREVIOUS -->
+        <button class="prev-btn" onclick="changeImage(-1)">
+            &#10094;
+        </button>
+
+        <!-- BIG IMAGE -->
+        <img id="lightbox-image" src="" alt="Gallery Image">
+
+        <!-- NEXT -->
+        <button class="next-btn" onclick="changeImage(1)">
+            &#10095;
+        </button>
+
+        <!-- IMAGE CAPTION -->
+        <div id="caption"></div>
+
+    </div>
+
+
+    <!-- JAVASCRIPT -->
+    <script>
+
+        // Gallery images
+        const images = [
+            "images/photo 1.jpg",
+            "images/photo 2.jpg",
+            "images/photo 3.jpg",
+            "images/photo 4.jpg",
+            "images/photo 5.jpg",
+            "images/photo 6.jpg",
+            "images/photo 7.jpg",
+            "images/photo 8.jpg"
+        ];
+
+        // Image titles
+        const titles = [
+            "Zanzibar Beach",
+            "Wild animals",
+            "Dolphin Tour",
+            "Safari Adventure",
+            "Beautiful Beach",
+            "Snorkeling",
+            "Tropical Island",
+            "Zanzibar Experience"
+        ];
+
+        let currentImage = 0;
+
+
+        // OPEN LIGHTBOX
+        function openLightbox(index) {
+
+            currentImage = index;
+
+            document.getElementById("lightbox").style.display = "flex";
+
+            document.getElementById("lightbox-image").src =
+                images[currentImage];
+
+            document.getElementById("caption").innerText =
+                titles[currentImage];
+
+            document.body.style.overflow = "hidden";
+        }
+
+
+        // CLOSE LIGHTBOX
+        function closeLightbox() {
+
+            document.getElementById("lightbox").style.display = "none";
+
+            document.body.style.overflow = "auto";
+        }
+
+
+        // NEXT / PREVIOUS
+        function changeImage(direction) {
+
+            currentImage += direction;
+
+            // If reaches the last image
+            if (currentImage >= images.length) {
+                currentImage = 0;
+            }
+
+            // If goes before first image
+            if (currentImage < 0) {
+                currentImage = images.length - 1;
+            }
+
+            document.getElementById("lightbox-image").src =
+                images[currentImage];
+
+            document.getElementById("caption").innerText =
+                titles[currentImage];
+        }
+
+
+        // CLOSE WHEN CLICKING OUTSIDE IMAGE
+        document.getElementById("lightbox").addEventListener("click", function(event) {
+
+            if (event.target === this) {
+                closeLightbox();
+            }
+
+        });
+
+
+        // KEYBOARD CONTROLS
+        document.addEventListener("keydown", function(event) {
+
+            if (event.key === "Escape") {
+                closeLightbox();
+            }
+
+            if (event.key === "ArrowRight") {
+                changeImage(1);
+            }
+
+            if (event.key === "ArrowLeft") {
+                changeImage(-1);
+            }
+
+        });
+
+    </script>
+
+</body>
+</html>
+
+
+
+
+
+<section class="phero"><div class="wrap"><div class="crumb"><a href="index.html">Home</a> / Gallery</div><h1>Gallery</h1><p>Photos and videos from our tours.</p></div></section>
+
+<footer id="contact"><div class="wrap">
+  <div class="cols">
+    <div>
+     <a class="logo" href="#home">
+  <img src="images/logoo.png" alt="RIEU Tours & Safaris" class="brand-logo">
+  <span class="brand-text">RIEU TOURS AND SAFARI<span>ZANZIBAR AND TANZANIA</span></span>
+</a>
+      <p>A memorable experience: Zanzibar &amp; Tanzania tours, safaris and private airport/seaport transfers.</p>
+    </div>
+    <div><h4>Explore</h4><ul>
+      <li><a href="#packages">Tours &amp; Safaris</a></li><li><a href="#transfers">Transfers</a></li>
+      <li><a href="#about">About Us</a></li><li><a href="#gallery">Gallery</a></li>
+      <li><a href="#faqs">FAQs</a></li><li><a href="#contact">Contact</a></li></ul></div>
+    <div><h4>Top Destinations</h4><ul>
+      <li><a href="#packages">Tanzania (38)</a></li><li><a href="#zanzibar">Zanzibar (25)</a></li>
+      <li><a href="#policies">Policies &amp; Terms</a></li></ul></div>
+    <div><h4>Contact Us</h4><ul>
+      <li>Zanzibar, Tanzania</li>
+      <li><a href="tel:+255679542803">+255 679 542 803</a></li>
+      <li><a href="mailto:rieutoursandsafaris@gmail.com">rieutoursandsafaris@gmail.com</a></li>
+      <li>Mon – Sun: 07:00 AM – 08:00 PM</li></ul></div>
+  </div>
+  <div class="copy"><span>© 2026 RIEU TOURS AND SAFARI| ZANZIBAR AND TANZANIA.  All rights reserved.</span><span>VISA · MASTERCARD · PAYPAL · M-PESA</span></div>
+</div></footer>
+<a class="wa" href="https://wa.me/255679542803">WhatsApp Us</a>
+<script>var b=document.querySelector('.menu-btn'),n=document.getElementById('nav');b.addEventListener('click',function(){var o=n.classList.toggle('open');b.setAttribute('aria-expanded',o)});</script>
+<script src="social.js"></script>
+</body></html>

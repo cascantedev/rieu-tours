@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Destinations Zanzibar | RIEU TOURS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="destinations.css"> <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <span>The most affordable tours in Zanzibar - Tanzania / WhatsApp: +255 679 542 803</span>
+  <span class="contact"><a href="tel:+255 679 542 803">+255 679 542 803</a><a href="mailto:rieutoursandsafaris@gmail.com">rieutoursandsafaris@gmail.com</a></span>
+</div>
+
+<header class="head">
+  <a class="logo" href="#">
+    <a class="logo" href="#">
+  <img src="images/logoo.png" alt="Rieu Tours" width="54" height="54">
+</a>
+    <span><b>RIEU TOURS</b><small>TOURS &amp; SAFARIS</small></span>
+  </a>
+  <div class="head-right">
+    <a class="quote" href="#book">Get a Free Quote</a>
+    <button class="burger" id="burger" aria-label="Menu">&#9776;</button>
+  </div>
+  <nav class="menu" id="menu">
+    <a href="#">Zanzibar Destinations</a>
+    <a href="tanzania tour.html">Tanzania Safaris</a>
+    <a href="index.html">Home</a>
+  </nav>
+</header>
+
+<section class="banner">
+  <div class="wrap">
+    <h1 id="title">Destinations Zanzibar</h1>
+    <div class="crumbs"><a href="#">Home</a><span id="crumb"></span></div>
+  </div>
+</section>
+
+<main>
+  <div class="view on" id="list"></div>
+  <div class="view detail" id="detail"></div>
+</main>
+
+<div class="lang">EN &#8963;</div>
+<a class="wa-float" id="waFloat" target="_blank" aria-label="WhatsApp">
+  <svg width="30" height="30" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.1-1.3A10 10 0 1 0 12 2zm5.2 13.9c-.2.6-1.300 1.200-1.800 1.200-.5.1-1 .2-3.300-.7-2.800-1.100-4.600-4-4.700-4.200-.1-.2-1.100-1.500-1.100-2.800s.7-2 1-2.300c.2-.3.500-.3.700-.3h.5c.2 0 .4 0 .6.500l.8 2c.1.200.1.400 0 .5l-.4.600c-.1.100-.3.300-.1.600.2.300.8 1.300 1.700 2.100 1.200 1 2.100 1.300 2.400 1.500.3.100.5.100.6-.1l.9-1.100c.2-.3.400-.2.600-.1l1.900.9c.3.100.5.200.5.300.1.200.1.800-.1 1.400z"/></svg>
+</a>
+
+<script>
+/* CHANGE THESE */
+const WHATSAPP = "+255 679 542 803";      // your number, without +
+const EMAIL = "rieutoursandsafaris@gmail.com";   // your email
+
+const TOURS = {
+  safariblue:{title:"Safari Blue",url:"safari-blue.html",img:"images/safari-blue-2.jpg",date:"March 25, 2020",time:"Full day",from:"$60",
+    short:"Safari Blue is a full day picnic trip. It has a lot of Coral reefs and Colorful Fishes in the Sea. Do...",
+    about:"Safari Blue takes you to sandbanks and clear lagoons, with snorkeling and a fresh seafood lunch on the beach.",
+    inc:["Dhow boat","Lunch","Snorkeling gear"],exc:["Extra drinks"]},
+  sunset:{title:"Zanzibar Sunset Cruise",url:"sunset-cruise.html",img:"images/cruise-2.jpg",date:"March 25, 2020",time:"2 hours",from:"$30",
+    short:"This cruise will excite you as you'll get a good glimpse of wonderful scenes of Indian Ocean, along the Kendwa and Nungwi...",
+    about:"Sail on a traditional dhow while the sun sets. Music, drinks and fresh tropical fruit on board.",
+    inc:["Dhow cruise","Fruit","Soda and water"],exc:["Alcohol"]},
+  mnemba:{title:"Mnemba Half day trip",url:"mnemba.html",img:"images/mn-mba.jpg",date:"March 25, 2020",time:"Half day",from:"$45",
+    short:"This tour takes you to Mnemba island, one of the most beautful beach in Zanzibar. You will play with dolphin,snorkelling...",
+    about:"Meet the locals, watch fishing and seaweed farming, and learn about daily life on the coast.",
+    inc:["Village guide","Transport"],exc:["Meals"]},
+    nakupenda:{title:"Nakupenda Tour",url:"nakupenda.html",img:"images/nakupenda.jpg",date:"March 25, 2020",time:"Half day",
+    short:"Visit the beautiful Nakupenda sandbank, a white sand island in the middle of the turquoise ocean.",
+    about:"Take a boat to Nakupenda sandbank, swim in crystal clear water, relax on the white sand and enjoy a fresh seafood lunch.",
+    inc:["Boat","Seafood lunch","Snorkeling gear"],exc:["Drinks"]},
+
+  prison:{title:"Prison Island Tour",url:"prison-island.html",img:"images/prison-island.jpg",date:"March 25, 2020",time:"Half day",
+    short:"Meet the giant tortoises and snorkel at Prison Island.",
+    about:"Enjoy a short boat ride to Prison Island, meet the giant tortoises, explore the old prison ruins and swim or snorkel in clear water.",
+    inc:["Boat","Guide","Snorkeling gear"],exc:["Entrance fee"]},
+
+  rock:{title:"Rock Restaurant Tour",url:"Rock-restaurant.html",img:"images/the-rock-2.jpg",date:"March 25, 2020",time:"2-3 hours",
+    short:"Dine at the famous Rock Restaurant on top of a rock in the ocean.",
+    about:"Visit the famous Rock Restaurant at Michamvi Pingwe, enjoy the amazing ocean view and taste fresh seafood.",
+    inc:["Transport","Guide"],exc:["Meals and drinks"]},
+
+  mtende:{title:"Mtende Beach Tour",url:"mtende.html",img:"images/mtende-1.jpg",date:"March 25, 2020",time:"Half day",
+    short:"Relax at the quiet and beautiful Mtende beach in southern Zanzibar.",
+    about:"Enjoy a peaceful day at Mtende beach with white sand, clear water, swimming and local views of the coast.",
+    inc:["Transport","Guide"],exc:["Meals"]},
+
+  jetski:{title:"Jetski Tour",url:"jetski.html",img:"images/jetski-1.jpg",date:"March 25, 2020",time:"1-2 hours",
+    short:"Ride a jetski on the Indian Ocean.",
+    about:"Enjoy fast and exciting jetski rides on the ocean with safety equipment and a trained instructor.",
+    inc:["Jetski","Life jacket","Instructor"],exc:["Drinks"]},
+
+  tumbatu:{title:"Tumbatu Tour",url:"tumbatu-tour.html",img:"images/tumbatu-2.jpg",date:"March 25, 2020",time:"Full day",
+    short:"Discover Tumbatu island and its traditional village life.",
+    about:"Take a boat to Tumbatu island, walk through the village, learn about local culture and enjoy the quiet beaches.",
+    inc:["Boat","Guide","Lunch"],exc:["Drinks"]},
+
+  baraka:{title:"Baraka Aquarium Tour",url:"index-4.html",img:"images/baraka-aquarium.jpg",date:"March 25, 2020",time:"Half day",
+    short:"Swim and snorkel with friendly sea creatures at Baraka Natural Aquarium.",
+    about:"Visit Baraka Natural Aquarium, a calm natural lagoon where you can see colorful fish, turtles and other marine life up close and enjoy snorkeling in safe, clear water.",
+    inc:["Transport","Guide","Snorkeling gear"],exc:["Entrance fee","Meals and drinks"]},
+
+  jetcar:{title:"Jet Car Tour",url:"jet-car.html",img:"images/Jetcar-2.jpg",date:"March 25, 2020",time:"1-2 hours",
+    short:"Fast and fun jet car ride on the Indian Ocean.",
+    about:"Feel the speed and excitement of a jet car on the ocean with safety equipment and an experienced instructor, perfect for friends, couples and families.",
+    inc:["Jet car","Life jacket","Instructor"],exc:["Drinks"]},
+
+  prisonisland:{title:"Prison Island Tour",url:"prison-tour.html",img:"images/prison-island.jpg",date:"March 25, 2020",time:"Half day",
+    short:"Meet the giant tortoises and snorkel at Prison Island.",
+    about:"Take a short boat ride to Prison Island, meet the giant Aldabra tortoises, explore the old prison ruins and swim or snorkel in the clear turquoise water.",
+    inc:["Boat","Guide","Snorkeling gear"],exc:["Entrance fee","Meals and drinks"]}
+};
+
+const $ = id => document.getElementById(id);
+const pic = t => `<img src="${t.img}" alt="${t.title}" onerror="this.remove()">`;
+
+$("waFloat").href = `https://wa.me/${WHATSAPP}`;
+$("burger").onclick = () => $("menu").classList.toggle("open");
+
+function renderList(){
+  $("list").innerHTML = Object.entries(TOURS).map(([k,t])=>`
+    <a class="item" href="${t.url || '#' + k}">
+      <div class="thumb">${pic(t)}</div>
+      <div class="txt"><h2>${t.title}</h2>
+        <div class="date">${t.date}</div>
+        <p>${t.short}</p></div>
+    </a>`).join("");
+}
+
+
+function renderDetail(k){
+  const t = TOURS[k];
+  $("detail").innerHTML = `
+    <a class="back" href="#">&larr; Back to Destinations</a>
+    <div class="hero">${pic(t)}</div>
+    <h2>${t.title}</h2>
+    <div class="facts"><span>${t.time}</span><span>From ${t.from} per person</span></div>
+    <p>${t.about}</p>
+    <h3>Included</h3><ul>${t.inc.map(i=>`<li>${i}</li>`).join("")}</ul>
+    <h3>Not included</h3><ul>${t.exc.map(i=>`<li>${i}</li>`).join("")}</ul>
+    <form class="book" id="book" onsubmit="return false">
+      <h3>Book: ${t.title}</h3>
+      <div class="grid">
+        <div><label>Full name</label><input id="f_name" required></div>
+        <div><label>Email</label><input id="f_mail" type="email"></div>
+        <div><label>Phone / WhatsApp</label><input id="f_tel"></div>
+        <div><label>Date</label><input id="f_date" type="date"></div>
+        <div><label>Adults</label><input id="f_ad" type="number" min="1" value="2"></div>
+        <div><label>Children</label><input id="f_ch" type="number" min="0" value="0"></div>
+        <div class="full"><label>Message</label><textarea id="f_msg" rows="3"></textarea></div>
+      </div>
+      <div class="send">
+        <button class="wa" onclick="sendBooking('${k}','wa')">Send via WhatsApp</button>
+        <button class="em" onclick="sendBooking('${k}','mail')">Send via Email</button>
+      </div>
+    </form>`;
+}
+
+function sendBooking(k,via){
+  const v = id => $(id).value.trim();
+  if(!v("f_name")){ $("f_name").focus(); return; }
+  const text = `Booking: ${TOURS[k].title}\nName: ${v("f_name")}\nEmail: ${v("f_mail")}\nPhone: ${v("f_tel")}\nDate: ${v("f_date")}\nAdults: ${v("f_ad")}\nChildren: ${v("f_ch")}\nMessage: ${v("f_msg")}`;
+  if(via==="wa") window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(text)}`,"_blank");
+  else location.href = `mailto:${EMAIL}?subject=${encodeURIComponent("Booking: "+TOURS[k].title)}&body=${encodeURIComponent(text)}`;
+}
+
+function route(){
+  const k = location.hash.slice(1);
+  const isTour = TOURS[k];
+  $("list").classList.toggle("on", !isTour);
+  $("detail").classList.toggle("on", !!isTour);
+  $("title").textContent = isTour ? TOURS[k].title : "Destinations Zanzibar";
+  $("crumb").innerHTML = isTour ? ` / <a href="#">Zanzibar</a> / ${TOURS[k].title}` : "";
+  $("menu").classList.remove("open");
+  if(isTour) renderDetail(k);
+  window.scrollTo(0,0);
+}
+renderList();
+window.addEventListener("hashchange",route);
+route();
+</script>
+<script src="social.js"></script>
+</body>
+</html>
