@@ -1,5 +1,5 @@
 (function(){
-  var FB = "https://www.facebook.com/JINA-LA-PAGE";
+  var FB = "https://www.facebook.com/Rieu Tur";
   var IG = "https://www.instagram.com/rieu_tours_and_safaris";
 
   var css =
